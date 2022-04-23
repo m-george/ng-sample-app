@@ -7,7 +7,10 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
 import { AppHeaderNavComponent } from './app-header-nav/app-header-nav.component';
 import { HomeComponent } from './home/home.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CurrencyService } from './currency.service';
+import { DashboardSettingsComponent } from './dashboard/dashboard-settings.component';
 
 @NgModule({
   declarations: [
@@ -15,14 +18,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginFormComponent,
     AppHeaderComponent,
     AppHeaderNavComponent,
-    HomeComponent
+    HomeComponent,
+    DashboardComponent,
+    DashboardSettingsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [CurrencyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

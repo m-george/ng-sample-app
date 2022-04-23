@@ -1,0 +1,20 @@
+
+<div class="bg-light p-4 shadow rounded-3">
+    <h1 class="my-4 fw-light">Welcome to the APP</h1>
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['revenues']" routerLinkActive="active">Daily Revenues in {{ currency }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['settings']" routerLinkActive="active">User Setting</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['logout']" routerLinkActive="active">Log out</a>
+        </li>
+    </ul>
+
+    <div class="bg-white p-4 shadow-sm">
+        <router-outlet></router-outlet>
+    </div>
+</div>
