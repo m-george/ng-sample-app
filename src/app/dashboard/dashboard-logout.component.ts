@@ -5,11 +5,10 @@ import { AuthService } from '../auth/auth.service';
     selector: 'dashboard-logout',
     templateUrl: 'dashboard-logout.component.html'
 })
-
 export class DashboardLogoutComponent implements OnInit {
-    constructor(private _authService: AuthService) { }
+    constructor(private _authService: AuthService) {}
 
-    ngOnInit() { }
+    ngOnInit() {}
 
     public logout() {
         this._authService.logout();

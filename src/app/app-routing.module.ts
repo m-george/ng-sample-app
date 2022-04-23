@@ -9,35 +9,34 @@ import { HomeComponent } from './home/home.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: DashboardComponent,
-    canActivate: [AuthGuardService],
-    children: [
-      {
+    {
         path: '',
-        component: HomeComponent
-      },
-      {
-        path: 'revenues',
-        component: DashboardRevenuesComponent,
-      },
-      {
-        path: 'settings',
-        component: DashboardSettingsComponent
-      },
-      {
-        path: 'logout',
-        component: DashboardLogoutComponent
-      }
-    ],
-  },
-  { path: 'login', component: LoginFormComponent },
-
+        component: DashboardComponent,
+        canActivate: [AuthGuardService],
+        children: [
+            {
+                path: '',
+                component: HomeComponent
+            },
+            {
+                path: 'revenues',
+                component: DashboardRevenuesComponent
+            },
+            {
+                path: 'settings',
+                component: DashboardSettingsComponent
+            },
+            {
+                path: 'logout',
+                component: DashboardLogoutComponent
+            }
+        ]
+    },
+    { path: 'login', component: LoginFormComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule {}

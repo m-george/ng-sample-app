@@ -6,22 +6,19 @@ import { CurrencyService } from '../currency.service';
     selector: 'dashboard-settings',
     templateUrl: 'dashboard-settings.component.html'
 })
-
 export class DashboardSettingsComponent implements OnInit {
     public currencies = CurrencyService.AVAILABLE_CURRENCIES;
-    public currencyForm : FormGroup;
+    public currencyForm: FormGroup;
 
-    constructor(private _currencyService : CurrencyService) { 
+    constructor(private _currencyService: CurrencyService) {
         this.currencyForm = new FormGroup({
             currency: new FormControl(_currencyService.getCurrency())
         });
-
     }
 
     ngOnInit() {
-        this._currencyService.currency$.subscribe((currency => {
-        }));
-     }
+        this._currencyService.currency$.subscribe((currency) => {});
+    }
 
     public onCurrencySubmit(form: FormGroup) {
         this._currencyService.setCurrency(form.value.currency);

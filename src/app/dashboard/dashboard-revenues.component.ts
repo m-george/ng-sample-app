@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CurrencyService } from '../currency.service';
 import { RevenuesService } from '../revenues.service';
 
-
-type QuantityClassificationResult = ('low'|'medium'|'high'|'none');
+type QuantityClassificationResult = 'low' | 'medium' | 'high' | 'none';
 
 interface QuantityClassificationRange {
     min: number;
@@ -21,26 +20,26 @@ export class DashboardRevenuesComponent implements OnInit {
     public availableDates: string[];
     public selectedDate: string;
 
-    constructor(private _currencyService : CurrencyService, private _revenueService: RevenuesService) { 
+    constructor(private _currencyService: CurrencyService, private _revenueService: RevenuesService) {
         this.currency = this._currencyService.getCurrency();
-        this.availableDates = this.getAvailableDates(3,3);
+        this.availableDates = this.getAvailableDates(3, 3);
         this.selectedDate = this.getCurrentDateFormatted();
     }
 
     ngOnInit() {
-        this._currencyService.currency$.subscribe((currency => this.currency = currency));
+        this._currencyService.currency$.subscribe((currency) => (this.currency = currency));
     }
 
-    /** 
-     * Get DD-MM-YYYY formatted date 
+    /**
+     * Get DD-MM-YYYY formatted date
      */
     private _formatGreek(date: Date) {
         return date.toLocaleDateString('el-GR');
     }
-    
+
     private _getDateByDayOffset(date: Date, offset = 0) {
         const previous = new Date(date.getTime());
-        
+
         previous.setDate(date.getDate() + offset);
 
         return previous;
@@ -58,8 +57,8 @@ export class DashboardRevenuesComponent implements OnInit {
         const currentDate = new Date();
         const dates = [];
 
-        for (let i = -daysBefore ; i <= daysAfter; i++) {
-            dates.push(this._getDateByDayOffset(currentDate,i));
+        for (let i = -daysBefore; i <= daysAfter; i++) {
+            dates.push(this._getDateByDayOffset(currentDate, i));
         }
 
         return dates.map(this._formatGreek);
@@ -70,10 +69,10 @@ export class DashboardRevenuesComponent implements OnInit {
     }
 
     private _inRange(value: number, min: number, max: number, inclusive = true): boolean {
-        if(inclusive) {
-            return (value >= min && value <= max);
+        if (inclusive) {
+            return value >= min && value <= max;
         } else {
-            return (value > min && value < max);
+            return value > min && value < max;
         }
     }
 
@@ -97,7 +96,7 @@ export class DashboardRevenuesComponent implements OnInit {
         ];
 
         for (const r of ranges) {
-            if(this._inRange(count, r.min, r.max)) {
+            if (this._inRange(count, r.min, r.max)) {
                 return r.classification;
             }
         }
@@ -125,7 +124,7 @@ export class DashboardRevenuesComponent implements OnInit {
         ];
 
         for (const r of ranges) {
-            if(this._inRange(revenue, r.min, r.max)) {
+            if (this._inRange(revenue, r.min, r.max)) {
                 return r.classification;
             }
         }

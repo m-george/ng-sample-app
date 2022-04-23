@@ -17,22 +17,18 @@ import { DashboardRevenuesComponent } from './dashboard/dashboard-revenues.compo
 import { RevenuesService } from './revenues.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginFormComponent,
-    AppHeaderComponent,
-    AppHeaderNavComponent,
-    DashboardComponent,
-    DashboardRevenuesComponent,
-    DashboardSettingsComponent,
-    HomeComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-  ],
-  providers: [CurrencyService, AuthService, AuthGuardService, RevenuesService],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        LoginFormComponent,
+        AppHeaderComponent,
+        AppHeaderNavComponent,
+        DashboardComponent,
+        DashboardRevenuesComponent,
+        DashboardSettingsComponent,
+        HomeComponent
+    ],
+    imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+    providers: [CurrencyService, AuthService, AuthGuardService, RevenuesService],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -9,20 +9,20 @@
 
     &.high {
         background-color: #d75832;
-        color: #FFF;
+        color: #fff;
     }
 }
 
 .revenue {
     &.low span {
-        color: rgba(0,0,0,0.3);
+        color: rgba(0, 0, 0, 0.3);
     }
 
     &.medium span {
-        color: rgba(0,0,0,0.75);
+        color: rgba(0, 0, 0, 0.75);
     }
 
     &.high span {
-        color: rgba(0,0,0,1);
+        color: rgba(0, 0, 0, 1);
     }
 }
