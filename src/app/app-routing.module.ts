@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuardService } from './auth/auth-guard.service';
 import { DashboardLogoutComponent } from './dashboard/dashboard-logout.component';
 import { DashboardRevenuesComponent } from './dashboard/dashboard-revenues.component';
 import { DashboardSettingsComponent } from './dashboard/dashboard-settings.component';
@@ -8,12 +9,15 @@ import { HomeComponent } from './home/home.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'login', component: LoginFormComponent },
   {
-    path: 'dashboard',
+    path: '',
     component: DashboardComponent,
+    canActivate: [AuthGuardService],
     children: [
+      {
+        path: '',
+        component: HomeComponent
+      },
       {
         path: 'revenues',
         component: DashboardRevenuesComponent,
@@ -28,6 +32,8 @@ const routes: Routes = [
       }
     ],
   },
+  { path: 'login', component: LoginFormComponent },
+
 ];
 
 @NgModule({

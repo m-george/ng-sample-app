@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
 import { AppHeaderNavComponent } from './app-header-nav/app-header-nav.component';
-import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CurrencyService } from './currency.service';
 import { DashboardSettingsComponent } from './dashboard/dashboard-settings.component';
+import { AuthService } from './auth/auth.service';
+import { AuthGuardService } from './auth/auth-guard.service';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,16 +20,16 @@ import { DashboardSettingsComponent } from './dashboard/dashboard-settings.compo
     LoginFormComponent,
     AppHeaderComponent,
     AppHeaderNavComponent,
-    HomeComponent,
     DashboardComponent,
-    DashboardSettingsComponent
+    DashboardSettingsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
   ],
-  providers: [CurrencyService],
+  providers: [CurrencyService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
