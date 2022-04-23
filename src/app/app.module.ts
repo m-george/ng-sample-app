@@ -13,6 +13,8 @@ import { DashboardSettingsComponent } from './dashboard/dashboard-settings.compo
 import { AuthService } from './auth/auth.service';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { HomeComponent } from './home/home.component';
+import { DashboardRevenuesComponent } from './dashboard/dashboard-revenues.component';
+import { RevenuesService } from './revenues.service';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { HomeComponent } from './home/home.component';
     AppHeaderComponent,
     AppHeaderNavComponent,
     DashboardComponent,
+    DashboardRevenuesComponent,
     DashboardSettingsComponent,
     HomeComponent
   ],
@@ -29,7 +32,7 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     ReactiveFormsModule,
   ],
-  providers: [CurrencyService, AuthService, AuthGuardService],
+  providers: [CurrencyService, AuthService, AuthGuardService, RevenuesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

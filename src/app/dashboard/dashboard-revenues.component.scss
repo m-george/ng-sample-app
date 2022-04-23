@@ -1,0 +1,28 @@
+.car-count {
+    &.low {
+        background-color: #e7ffe6;
+    }
+
+    &.medium {
+        background-color: #ffce72;
+    }
+
+    &.high {
+        background-color: #d75832;
+        color: #FFF;
+    }
+}
+
+.revenue {
+    &.low span {
+        color: rgba(0,0,0,0.3);
+    }
+
+    &.medium span {
+        color: rgba(0,0,0,0.75);
+    }
+
+    &.high span {
+        color: rgba(0,0,0,1);
+    }
+}
