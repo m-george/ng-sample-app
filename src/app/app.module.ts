@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
-import { AppHeaderNavComponent } from './app-header-nav/app-header-nav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CurrencyService } from './currency.service';
@@ -21,7 +20,6 @@ import { RevenuesService } from './revenues.service';
         AppComponent,
         LoginFormComponent,
         AppHeaderComponent,
-        AppHeaderNavComponent,
         DashboardComponent,
         DashboardRevenuesComponent,
         DashboardSettingsComponent,
