@@ -3,13 +3,7 @@
 
 <div>
     <label for="dateSelect" class="form-label">Date:</label>
-    <select
-        #dateSelect
-        id="dateSelect"
-        class="form-select"
-        aria-label="Date select for revenues"
-        (change)="onDateChange(dateSelect.value)"
-    >
+    <select #dateSelect id="dateSelect" class="form-select" aria-label="Date select for revenues" (change)="onDateChange(dateSelect.value)">
         <option *ngFor="let d of this.availableDates; index as i" [selected]="this.getCurrentDateFormatted() == d" [value]="d">
             {{ d }}
         </option>

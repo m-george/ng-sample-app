@@ -9,7 +9,7 @@ import { CurrencyService } from '../currency.service';
 export class DashboardSettingsComponent implements OnInit {
     public currencies = CurrencyService.AVAILABLE_CURRENCIES;
     public currencyForm: FormGroup;
-    public saved: (null|number) = null;
+    public saved: null | number = null;
 
     constructor(private _currencyService: CurrencyService) {
         this.currencyForm = new FormGroup({
@@ -22,18 +22,17 @@ export class DashboardSettingsComponent implements OnInit {
     }
 
     private _displaySuccessMessage() {
-        if(this.saved) {
+        if (this.saved) {
             window.clearTimeout(this.saved);
         }
 
-        this.saved = window.setTimeout(()=>{
+        this.saved = window.setTimeout(() => {
             this.saved = null;
-        },3000);
+        }, 3000);
     }
 
     public onCurrencySubmit(form: FormGroup) {
         this._currencyService.setCurrency(form.value.currency);
         this._displaySuccessMessage();
-
     }
 }

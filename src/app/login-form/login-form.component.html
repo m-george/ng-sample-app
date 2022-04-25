@@ -25,16 +25,17 @@
                             class="form-control"
                         />
                         <label for="email">Email address</label>
-                        <ul *ngIf="loginForm.controls['email'].errors && (loginForm.controls['email']?.dirty && loginForm.controls['email']?.touched)" class="text-danger mt-2 mb-0">
-                            <li *ngIf="loginForm.controls['email'].errors?.['required']">
-                                Email is required
-                            </li>
-                            <li *ngIf="loginForm.controls['email'].errors?.['email']">
-                                Invalid email
-                            </li>
-                            <li *ngIf="loginForm.controls['email'].errors?.['minlength']">
-                                Email should be at least 8 characters long
-                            </li>
+                        <ul
+                            *ngIf="
+                                loginForm.controls['email'].errors &&
+                                loginForm.controls['email']?.dirty &&
+                                loginForm.controls['email']?.touched
+                            "
+                            class="text-danger mt-2 mb-0"
+                        >
+                            <li *ngIf="loginForm.controls['email'].errors?.['required']">Email is required</li>
+                            <li *ngIf="loginForm.controls['email'].errors?.['email']">Invalid email</li>
+                            <li *ngIf="loginForm.controls['email'].errors?.['minlength']">Email should be at least 8 characters long</li>
                         </ul>
                     </fieldset>
                     <fieldset class="form-floating">
@@ -48,10 +49,15 @@
                             required
                         />
                         <label for="password">Password</label>
-                        <ul *ngIf="loginForm.controls['password'].errors && (loginForm.controls['password']?.dirty && loginForm.controls['password']?.touched)" class="text-danger mt-2 mb-0">
-                            <li *ngIf="loginForm.controls['password'].errors?.['required']">
-                                Password is required
-                            </li>
+                        <ul
+                            *ngIf="
+                                loginForm.controls['password'].errors &&
+                                loginForm.controls['password']?.dirty &&
+                                loginForm.controls['password']?.touched
+                            "
+                            class="text-danger mt-2 mb-0"
+                        >
+                            <li *ngIf="loginForm.controls['password'].errors?.['required']">Password is required</li>
                             <li *ngIf="loginForm.controls['password'].errors?.['minlength']">
                                 Password should be at least 8 characters long
                             </li>
