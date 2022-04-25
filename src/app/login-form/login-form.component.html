@@ -1,9 +1,7 @@
 <div class="auth-page">
     <div class="container page">
         <div class="row">
-            <div class="col-md-6 offset-md-3 col-xs-12">
-                <h1 class="text-xs-center">Login</h1>
-
+            <div class="col-xs-12 col-md-8 col-lg-6 offset-md-3">
                 <form
                     class="shadow-lg mt-4 p-3 rounded-3 bg-white d-flex flex-column gap-3"
                     name="form"
@@ -11,6 +9,10 @@
                     [formGroup]="loginForm"
                     (ngSubmit)="onSubmit(f.value)"
                 >
+                    <div>
+                        <h1 class="display-6 my-0">Login</h1>
+                        <hr />
+                    </div>
                     <fieldset class="form-floating">
                         <input
                             id="email"
@@ -18,19 +20,22 @@
                             type="email"
                             formControlName="email"
                             email
-                            minlength="3"
-                            [ngClass]="['form-control', '']"
+                            required
+                            minlength="8"
+                            class="form-control"
                         />
                         <label for="email">Email address</label>
-                        <div
-                            *ngIf="
-                                loginForm.controls['email'].errors &&
-                                (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)
-                            "
-                            class="mt-2 text-danger"
-                        >
-                            invalid email
-                        </div>
+                        <ul *ngIf="loginForm.controls['email'].errors && (loginForm.controls['email']?.dirty && loginForm.controls['email']?.touched)" class="text-danger mt-2 mb-0">
+                            <li *ngIf="loginForm.controls['email'].errors?.['required']">
+                                Email is required
+                            </li>
+                            <li *ngIf="loginForm.controls['email'].errors?.['email']">
+                                Invalid email
+                            </li>
+                            <li *ngIf="loginForm.controls['email'].errors?.['minlength']">
+                                Email should be at least 8 characters long
+                            </li>
+                        </ul>
                     </fieldset>
                     <fieldset class="form-floating">
                         <input
@@ -40,28 +45,22 @@
                             class="form-control"
                             type="password"
                             minlength="8"
+                            required
                         />
                         <label for="password">Password</label>
-                        <div
-                            *ngIf="
-                                loginForm.controls['password'].errors &&
-                                (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)
-                            "
-                            class="mt-2 text-danger"
-                        >
-                            invalid password
-                        </div>
+                        <ul *ngIf="loginForm.controls['password'].errors && (loginForm.controls['password']?.dirty && loginForm.controls['password']?.touched)" class="text-danger mt-2 mb-0">
+                            <li *ngIf="loginForm.controls['password'].errors?.['required']">
+                                Password is required
+                            </li>
+                            <li *ngIf="loginForm.controls['password'].errors?.['minlength']">
+                                Password should be at least 8 characters long
+                            </li>
+                        </ul>
                     </fieldset>
                     <div class="d-flex justify-content-end">
                         <button class="btn btn-primary btn-lg px-5" [disabled]="!f.form.valid" type="submit">Login</button>
                     </div>
                 </form>
-
-                <div class="mt-5">
-                    <p class="text-end">
-                        <a [routerLink]="['/register']">Need an account?</a>
-                    </p>
-                </div>
             </div>
         </div>
     </div>
