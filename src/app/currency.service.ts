@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 
+/**
+ * Service responsible for providing/updating the currently selected currency to/from components
+ */
+
 @Injectable({
     providedIn: 'root'
 })

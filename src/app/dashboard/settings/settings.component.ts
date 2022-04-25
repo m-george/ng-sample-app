@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { CurrencyService } from '../currency.service';
+import { CurrencyService } from '../../currency.service';
 
 @Component({
     selector: 'dashboard-settings',
-    templateUrl: 'dashboard-settings.component.html'
+    templateUrl: './settings.component.html'
 })
 export class DashboardSettingsComponent implements OnInit {
     public currencies = CurrencyService.AVAILABLE_CURRENCIES;

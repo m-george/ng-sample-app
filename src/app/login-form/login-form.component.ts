@@ -23,10 +23,8 @@ export class LoginFormComponent implements OnInit {
         if (this._authService.isAuthenticated()) this._router.navigate(['/']);
     }
 
-    onSubmit(value: any): void {
-        console.log(value);
+    public onSubmit({ email, password }: { email: string; password: string }): void {
         this.submitted = true;
-
-        this._authService.login();
+        this._authService.login(email, password);
     }
 }

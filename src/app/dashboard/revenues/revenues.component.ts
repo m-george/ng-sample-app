@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CurrencyService } from '../currency.service';
-import { RevenuesService } from '../revenues.service';
+import { CurrencyService } from '../../currency.service';
+import { RevenuesService } from '../../revenues.service';
 
 type QuantityClassificationResult = 'low' | 'medium' | 'high' | 'none';
 
@@ -12,8 +12,8 @@ interface QuantityClassificationRange {
 
 @Component({
     selector: 'dashboard-revenue',
-    templateUrl: 'dashboard-revenues.component.html',
-    styleUrls: ['./dashboard-revenues.component.scss']
+    templateUrl: 'revenues.component.html',
+    styleUrls: ['./revenues.component.scss']
 })
 export class DashboardRevenuesComponent implements OnInit {
     public currency: string;
@@ -76,6 +76,10 @@ export class DashboardRevenuesComponent implements OnInit {
         }
     }
 
+    /**
+     *  Classifies number of cars as low|medium|high
+     *  Used for styling cells of table displaying them
+    */
     public classifyCarsCount(count: number): QuantityClassificationResult {
         const ranges: QuantityClassificationRange[] = [
             {
@@ -104,6 +108,10 @@ export class DashboardRevenuesComponent implements OnInit {
         return 'none';
     }
 
+    /**
+     *  Classifies revenues as low|medium|high
+     *  Used for styling cells of table displaying them
+    */
     public classifyRevenue(revenue: number): QuantityClassificationResult {
         const ranges: QuantityClassificationRange[] = [
             {

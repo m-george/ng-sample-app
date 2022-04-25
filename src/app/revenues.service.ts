@@ -6,6 +6,11 @@ interface Revenues {
     revenue: number;
 }
 
+/**
+ * Service used for providing revenues by selected day
+ * this is a mockup, that when requested the revenues of a selected day,
+ * it generates and stores the fake data for the current day (unless they are already generated)
+ */
 @Injectable({
     providedIn: 'root'
 })

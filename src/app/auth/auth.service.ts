@@ -14,9 +14,10 @@ export class AuthService {
         return !!token;
     }
 
-    public login() {
+    public login(email: string, password: string) {
         if (!this.isAuthenticated()) {
-            window.localStorage.setItem(AuthService.TOKEN_LS_NAME, 'enter_real_token_here');
+            // Implement login functionality here
+            window.localStorage.setItem(AuthService.TOKEN_LS_NAME, `${email}${password}`);
             window.location.href = '/';
         }
     }

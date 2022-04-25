@@ -8,11 +8,11 @@ import { AppHeaderComponent } from './app-header/app-header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CurrencyService } from './currency.service';
-import { DashboardSettingsComponent } from './dashboard/dashboard-settings.component';
+import { DashboardSettingsComponent } from './dashboard/settings/settings.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuardService } from './auth/auth-guard.service';
-import { HomeComponent } from './home/home.component';
-import { DashboardRevenuesComponent } from './dashboard/dashboard-revenues.component';
+import { HomeComponent } from './dashboard/home/home.component';
+import { DashboardRevenuesComponent } from './dashboard/revenues/revenues.component';
 import { RevenuesService } from './revenues.service';
 
 @NgModule({
