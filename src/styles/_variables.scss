@@ -1,0 +1,29 @@
+$body-bg: #efefef;
+
+$primary: #3c304e;
+$secondary: #c7d2db;
+$success: #419b3e;
+$danger: #cc330d;
+$info: #5c8c94;
+$warning: #cf8c28;
+$light: #f3f3f3;
+$dark: #1e2b37;
+$spacer: 1rem;
+$border-width: 1px;
+$btn-border-radius: 0.25rem;
+
+$headings-color: #000;
+$hr-color: rgba(0,0,0,0.25);
+$link-color: rgb(0, 67, 167);
+
+$nav-tabs-link-active-color: #000;
+$nav-tabs-border-width: 0;
+$nav-tabs-link-active-bg: white;
+
+$container-max-widths: (
+    sm: 540px,
+    md: 640px,
+    lg: 720px,
+    xl: 960px,
+    xxl: 1024px
+);
